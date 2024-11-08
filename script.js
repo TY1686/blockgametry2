@@ -10,6 +10,9 @@ let scores = [];
 
 const startButton = document.getElementById("startButton");
 const pauseButton = document.getElementById("pauseButton");
+const leftButton = document.getElementById("leftButton");
+const rightButton = document.getElementById("rightButton");
+
 startButton.addEventListener("click", startGame);
 pauseButton.addEventListener("click", togglePause);
 
@@ -54,6 +57,19 @@ for (let i = 2; i <= 6; i++) {
 }
 
 let blocks;
+
+// スマホ用の左右ボタンのタッチイベント設定
+leftButton.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  paddle.dx = -paddle.speed;
+});
+leftButton.addEventListener("touchend", () => paddle.dx = 0);
+
+rightButton.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  paddle.dx = paddle.speed;
+});
+rightButton.addEventListener("touchend", () => paddle.dx = 0);
 
 function drawScore() {
   ctx.font = "24px Arial";
@@ -219,6 +235,7 @@ function togglePause() {
 
 // タッチ操作対応（スマホでのパドル移動）
 canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault();
   const touchX = e.touches[0].clientX - canvas.offsetLeft;
   paddle.x = touchX - paddle.width / 2;
 });
