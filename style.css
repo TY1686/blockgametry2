@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+canvas {
+  border: 2px solid #000;
+  background-color: #eee;
+}
+
+#scorePanel {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 左右移動ボタンのスタイル */
+#controlButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+#controlButtons button {
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}
+
+/* スマホ向けのキャンバスの調整 */
+@media (max-width: 600px) {
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+}
