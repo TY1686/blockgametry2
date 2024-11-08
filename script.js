@@ -21,8 +21,8 @@ const ball = {
   y: canvas.height - 100,
   radius: 15,
   speed: 4,
-  dx: 4,
-  dy: -4,
+  dx: 2,
+  dy: -2,
   rotation: 0,
   rotationSpeed: 0,
   image: new Image()
